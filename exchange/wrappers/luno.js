@@ -319,7 +319,7 @@ Trader.prototype.cancelOrder = function(order, callback) {
   }
   const process = (err, data) => {
     if (err) {
-      if (_.contains(err.message, 'Cannot stop unknown')) {
+      if (_.includes(err.message, 'Cannot stop unknown')) {
         log(name, 'unable to cancel order:', order, '(' + err.message + ') assuming success...');
       } else {
         log(name, 'unable to cancel order:', order, '(' + err.message + ') aborting...');
